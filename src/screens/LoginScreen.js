@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, TextInput, TouchableOpacity, StyleSheet, SafeAreaView, ActivityIndicator, Alert } from 'react-native';
+import { View, Text, TextInput, TouchableOpacity, StyleSheet, SafeAreaView, ActivityIndicator} from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
 const LoginScreen = () => {
@@ -32,11 +32,12 @@ const LoginScreen = () => {
           <Text style={styles.countryCode}>+91</Text>
           <TextInput
             style={styles.input}
-            placeholder="Phone Number"
+            placeholder="Enter your Phone Number "
             keyboardType="phone-pad"
             value={phoneNumber}
             onChangeText={setPhoneNumber}
             maxLength={10}
+            placeholderTextColor="#ccc"
           />
         </View>
         <TouchableOpacity
@@ -70,7 +71,7 @@ const LoginScreen = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#FFF5F5',
+    backgroundColor: '#c8a7a7',
   },
   backButton: {
     padding: 20,

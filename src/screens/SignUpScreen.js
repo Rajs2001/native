@@ -31,6 +31,7 @@ const SignUpScreen = () => {
           placeholder="Enter name"
           value={name}
           onChangeText={setName}
+          placeholderTextColor="#ddd"
         />
         <TextInput
           style={styles.input}
@@ -38,6 +39,7 @@ const SignUpScreen = () => {
           value={email}
           onChangeText={setEmail}
           keyboardType="email-address"
+          placeholderTextColor="#ddd"
         />
         <TouchableOpacity
           style={[styles.submitButton, name.trim() !== '' && styles.submitButtonActive]}
@@ -60,6 +62,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#FFF5F5',
+    backgroundColor:'#c8a7a7',
   },
   backButton: {
     padding: 20,
@@ -85,7 +88,7 @@ const styles = StyleSheet.create({
     fontSize: 18,
     color: '#FF424E',
     marginBottom: 20,
-    fontFamily: 'Inter-Medium',
+    fontFamily: 'Inter-Regular',
   },
   input: {
     width: '100%',

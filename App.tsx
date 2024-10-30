@@ -8,6 +8,7 @@ import  LoginScreen  from "./src/screens/LoginScreen";
 import  OTPVerificationScreen  from "./src/screens/OTPVerificationScreen";
 import SignUpScreen from "./src/screens/SignUpScreen";
 import SplashScreen from './src/screens/SplashScreen';
+import HomeScreen from './src/screens/HomeScreen';
 
 enableScreens();
 
@@ -23,8 +24,9 @@ export default function App(){
       {/* <stack.Navigator initialRouteName="SplashScreen"> */}
       <stack.Screen name='SplashScreen' component={SplashScreen}/>
       <stack.Screen name="LoginScreen" component={LoginScreen}/>
-      <stack.Screen name="SignUp" component={SignUpScreen}/>
       <stack.Screen name="OTPVerification" component={OTPVerificationScreen}/>
+      <stack.Screen name="SignUp" component={SignUpScreen}/>
+      <stack.Screen name="Home" component={HomeScreen}/>
 
       </stack.Navigator>
     </NavigationContainer>

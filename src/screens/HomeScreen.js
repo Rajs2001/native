@@ -1,12 +1,21 @@
-import React, { useState } from 'react';
-import { View, Text, TouchableOpacity, StyleSheet, SafeAreaView, Image, ScrollView } from 'react-native';
-import { useNavigation } from '@react-navigation/native';
+import React, {useState} from 'react';
+import {
+  View,
+  Text,
+  TouchableOpacity,
+  StyleSheet,
+  SafeAreaView,
+  ScrollView,
+} from 'react-native';
+import {useNavigation} from '@react-navigation/native';
+import Icon from 'react-native-vector-icons/FontAwesome';
+import MaterialIcon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 const HomeScreen = () => {
   const [selectedMeal, setSelectedMeal] = useState('Breakfast');
   const navigation = useNavigation();
 
-  const handleMealSelection = (meal) => {
+  const handleMealSelection = meal => {
     setSelectedMeal(meal);
   };
 
@@ -20,18 +29,34 @@ const HomeScreen = () => {
           </TouchableOpacity>
           <View style={styles.headerIcons}>
             <TouchableOpacity style={styles.iconButton}>
-              <Image source={require('../assets/bag-icon.png')} style={styles.icon} />
+              <Icon name="menu" size={24} color="#666" />
             </TouchableOpacity>
             <TouchableOpacity style={styles.iconButton}>
-              <Image source={require('../assets/video-icon.png')} style={styles.icon} />
+              <Icon name="menu" size={24} color="#666" />
             </TouchableOpacity>
             <TouchableOpacity style={styles.iconButton}>
-              <Image source={require('../assets/wallet-icon.png')} style={styles.icon} />
+              <Icon name="menu" size={24} color="#666" />
             </TouchableOpacity>
           </View>
         </View>
-        <View style={styles.banner}>
-          <Image source={require('../assets/launch-banner.png')} style={styles.bannerImage} />
+        <View
+          style={{
+            width: 150,
+            marginHorizontal: '32%',
+            backgroundColor: 'red',
+            height: 150,
+            borderRadius: 100,
+          }}>
+          <Text
+            style={{
+              color: 'white',
+              marginTop: 55,
+              marginLeft:18,
+              fontFamily:'Inter-Bold',
+              fontSize:25,
+            }}>
+            ZIPPER
+          </Text>
         </View>
         <View style={styles.content}>
           <View style={styles.dateSelector}>
@@ -44,20 +69,26 @@ const HomeScreen = () => {
             </TouchableOpacity>
           </View>
           <View style={styles.mealSelector}>
-            {['Breakfast', 'Lunch', 'Dinner'].map((meal) => (
+            {['Breakfast', 'Lunch', 'Dinner'].map(meal => (
               <TouchableOpacity
                 key={meal}
-                style={[styles.mealButton, selectedMeal === meal && styles.selectedMealButton]}
-                onPress={() => handleMealSelection(meal)}
-              >
-                <Text style={[styles.mealButtonText, selectedMeal === meal && styles.selectedMealButtonText]}>
+                style={[
+                  styles.mealButton,
+                  selectedMeal === meal && styles.selectedMealButton,
+                ]}
+                onPress={() => handleMealSelection(meal)}>
+                <Text
+                  style={[
+                    styles.mealButtonText,
+                    selectedMeal === meal && styles.selectedMealButtonText,
+                  ]}>
                   {meal}
                 </Text>
               </TouchableOpacity>
             ))}
           </View>
           <View style={styles.noMealContainer}>
-            <Image source={require('../assets/sad-face-icon.png')} style={styles.sadFaceIcon} />
+            <Icon name="icon" size={60} color="#666" />
             <Text style={styles.noMealText}>No meal found</Text>
           </View>
         </View>
@@ -69,15 +100,15 @@ const HomeScreen = () => {
       </View>
       <View style={styles.tabBar}>
         <TouchableOpacity style={styles.tabButton}>
-          <Image source={require('../assets/tiffin-icon.png')} style={styles.tabIcon} />
+          <MaterialIcon name="icon" size={24} color="#FF424E" />
           <Text style={[styles.tabText, styles.activeTabText]}>Tiffin</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.tabButton}>
-          <Image source={require('../assets/insta-icon.png')} style={styles.tabIcon} />
+          <MaterialIcon name="icon" size={24} color="#666" />
           <Text style={styles.tabText}>Insta</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.tabButton}>
-          <Image source={require('../assets/more-icon.png')} style={styles.tabIcon} />
+          <MaterialIcon name="icon" size={24} color="#666" />
           <Text style={styles.tabText}>More</Text>
         </TouchableOpacity>
       </View>
@@ -118,19 +149,12 @@ const styles = StyleSheet.create({
   iconButton: {
     marginLeft: 15,
   },
-  icon: {
-    width: 24,
-    height: 24,
-  },
   banner: {
     width: '100%',
     height: 100,
     marginBottom: 20,
-  },
-  bannerImage: {
-    width: '100%',
-    height: '100%',
-    resizeMode: 'cover',
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   content: {
     flex: 1,
@@ -183,11 +207,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
-  sadFaceIcon: {
-    width: 60,
-    height: 60,
-    marginBottom: 10,
-  },
   noMealText: {
     fontSize: 18,
     color: '#666',
@@ -217,11 +236,6 @@ const styles = StyleSheet.create({
   },
   tabButton: {
     alignItems: 'center',
-  },
-  tabIcon: {
-    width: 24,
-    height: 24,
-    marginBottom: 5,
   },
   tabText: {
     fontSize: 12,

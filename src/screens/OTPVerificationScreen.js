@@ -82,7 +82,7 @@ const OTPVerificationScreen = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#FFF5F5',
+    backgroundColor: '#c8a7a7',
   },
   backButton: {
     padding: 20,
